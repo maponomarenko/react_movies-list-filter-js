@@ -8,9 +8,9 @@ const preparedMovies = (movies, query) => {
     const queryToUse = query.trim().toLowerCase();
 
     return movies.filter(
-      movie =>
-        movie.title.toLowerCase().includes(queryToUse) ||
-        movie.description.toLowerCase().includes(queryToUse),
+      ({ title, description }) =>
+        title.toLowerCase().includes(queryToUse) ||
+        description.toLowerCase().includes(queryToUse),
     );
   }
 
